@@ -7,7 +7,7 @@ int speed = 0;
 
 void setup() {
   CircuitPlayground.begin();
-  CircuitPlayground.setBrightness(255);
+  CircuitPlayground.setBrightness(10);
   CircuitPlayground.clearPixels();
 
   setupFFT();
@@ -29,9 +29,11 @@ void button() {
 
   switch (mode) {
     case 0:
+    CircuitPlayground.setBrightness(5);
       loopRainbow();
       break;
     case 1:
+    CircuitPlayground.setBrightness(10);
       loopFFT();
       break;
   }

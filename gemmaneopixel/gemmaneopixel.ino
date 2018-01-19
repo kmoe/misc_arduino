@@ -11,12 +11,12 @@ Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUM_LEDS, PIN);
 
 uint8_t  mode   = 0,        // Current animation effect
          offset = 0;        // Position of spinner animation
-uint32_t color  = 0xFF8000; // Starting color = amber
+uint32_t color  = 0xffffff; // Starting color = amber
 uint32_t prevTime;          // Time of last animation mode switch
 
 void setup() {
   pixels.begin();
-  pixels.setBrightness(60); // ~1/3 brightness
+  pixels.setBrightness(1); // ~1/3 brightness
   prevTime = millis();      // Starting time
 }
 
@@ -28,6 +28,8 @@ void loop() {
   for(i=0; i<NUM_LEDS; i++) {
     pixels.setPixelColor(i,color);
   }
+  pixels.setPixelColor(0, 0xff0000);
+  pixels.setPixelColor(1, 0xff0000);
   pixels.show();
 
 //  switch(mode) {
